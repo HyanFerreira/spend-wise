@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `spendwise`.`usuario` (
   `sobrenome` VARCHAR(200) NOT NULL,
   `email` VARCHAR(150) NULL,
   `senha` VARCHAR(45) NOT NULL,
-  `cpf` VARCHAR(10) NOT NULL,
+  `cpf` VARCHAR(11) NOT NULL,
   PRIMARY KEY (`id`, `cpf`))
 ENGINE = InnoDB;
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `spendwise`.`categoria_receita` (
   `tipo` VARCHAR(50) NULL,
   `usuario_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_categoria_receita_usuario_idx` (`usuario_id` ASC) VISIBLE,
+  INDEX `fk_categoria_receita_usuario_idx` (`usuario_id` ASC),
   CONSTRAINT `fk_categoria_receita_usuario`
     FOREIGN KEY (`usuario_id`)
     REFERENCES `spendwise`.`usuario` (`id`)
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `spendwise`.`receitas` (
   `data` DATETIME NULL,
   `categoria_receita_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_receitas_categoria_receita1_idx` (`categoria_receita_id` ASC) VISIBLE,
+  INDEX `fk_receitas_categoria_receita1_idx` (`categoria_receita_id` ASC),
   CONSTRAINT `fk_receitas_categoria_receita1`
     FOREIGN KEY (`categoria_receita_id`)
     REFERENCES `spendwise`.`categoria_receita` (`id`)
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `spendwise`.`categoria_despesa` (
   `tipo` VARCHAR(50) NULL,
   `usuario_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_categoria_despesa_usuario1_idx` (`usuario_id` ASC) VISIBLE,
+  INDEX `fk_categoria_despesa_usuario1_idx` (`usuario_id` ASC),
   CONSTRAINT `fk_categoria_despesa_usuario1`
     FOREIGN KEY (`usuario_id`)
     REFERENCES `spendwise`.`usuario` (`id`)
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `spendwise`.`despesas` (
   `data` DATETIME NULL,
   `categoria_despesa_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_despesas_categoria_despesa1_idx` (`categoria_despesa_id` ASC) VISIBLE,
+  INDEX `fk_despesas_categoria_despesa1_idx` (`categoria_despesa_id` ASC),
   CONSTRAINT `fk_despesas_categoria_despesa1`
     FOREIGN KEY (`categoria_despesa_id`)
     REFERENCES `spendwise`.`categoria_despesa` (`id`)
