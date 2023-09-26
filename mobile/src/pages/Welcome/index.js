@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigation } from "@react-navigation/native";
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 const textCarouselItems = [
@@ -10,6 +11,7 @@ const textCarouselItems = [
 
 export default function Welcome() {
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
+    const navigation = useNavigation();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -39,7 +41,7 @@ export default function Welcome() {
                 <TouchableOpacity style={styles.button_signup}>
                     <Text style={styles.button_text_signup}>Cadastre-se</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button_signin}>
+                <TouchableOpacity style={styles.button_signin} onPress={() => navigation.navigate("SignIn")}>
                     <Text style={styles.button_text_signin}>Entrar</Text>
                 </TouchableOpacity>
             </View>
@@ -55,4 +57,78 @@ const styles = StyleSheet.create({
         backgroundColor: '#33415A',
         overflow: 'hidden',
     },
+    radial_one: {
+        position: 'absolute',
+        width: 600,
+        height: 600,
+        top: -335,
+        backgroundColor: 'rgba(0, 252, 248, 0.8)',
+        borderRadius: 500,
+    },
+    radial_two: {
+        position: 'absolute',
+        width: 500,
+        height: 500,
+        top: -300,
+        backgroundColor: '#00FCF8',
+        borderRadius: 500,
+    },
+    view_logo: {
+        position: 'absolute',
+        top: 30,
+        left: 0,
+        right: 0,
+        alignItems: 'center',
+    },
+    logo: {
+        width: 150,
+        height: 102,
+    },
+    view_carousel: {
+        position: 'absolute',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 250,
+        height: 200,
+        borderRadius: 10,
+        backgroundColor: '#222A3F',
+        top: 300,
+    },
+    text_carousel: {
+        textAlign: 'center',
+        padding: 15,
+        color: '#ffff',
+    },
+    view_buttons: {
+        position: 'absolute',
+        flex: 1,
+        gap: 15,
+        top: 530,
+    },
+    button_signup: {
+        paddingHorizontal: 60,
+        paddingVertical: 10,
+        backgroundColor: "#00FCF8",
+        borderRadius: 20,
+    },
+    button_signin: {
+        paddingHorizontal: 60,
+        paddingVertical: 10,
+        backgroundColor: "#222A3F",
+        borderRadius: 20,
+    },
+    button_text_signup: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: "#33415A",
+        textAlign: "center",
+    },
+    button_text_signin: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: "#ffffff",
+        textAlign: "center",
+    },
+
 });

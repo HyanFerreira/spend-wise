@@ -7,7 +7,7 @@ function Routes() {
     const signed = false;
     const welcome = false;
 
-    return welcome ? <view></view> : <AuthRoutes/>;
+    return welcome ? <view></view> : <AuthRoutes />;
 }
 
 export default Routes;
