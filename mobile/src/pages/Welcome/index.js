@@ -30,7 +30,7 @@ export default function Welcome() {
             <View style={styles.radial_one}></View>
             <View style={styles.radial_two}></View>
             <View style={styles.view_logo}>
-                <Image style={styles.logo} source={require('./logotipo1.png')} />
+                <Image style={styles.logo} source={require('../../assets/logotipo1.png')} />
             </View>
             <View style={styles.view_carousel}>
                 <Text style={styles.text_carousel}>
@@ -38,7 +38,7 @@ export default function Welcome() {
                 </Text>
             </View>
             <View style={styles.view_buttons}>
-                <TouchableOpacity style={styles.button_signup}>
+                <TouchableOpacity style={styles.button_signup} onPress={() => navigation.navigate("SignUp")}>
                     <Text style={styles.button_text_signup}>Cadastre-se</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button_signin} onPress={() => navigation.navigate("SignIn")}>
@@ -59,16 +59,16 @@ const styles = StyleSheet.create({
     },
     radial_one: {
         position: 'absolute',
-        width: 600,
-        height: 600,
+        width: 550,
+        height: 500,
         top: -335,
         backgroundColor: 'rgba(0, 252, 248, 0.8)',
         borderRadius: 500,
     },
     radial_two: {
         position: 'absolute',
-        width: 500,
-        height: 500,
+        width: 450,
+        height: 450,
         top: -300,
         backgroundColor: '#00FCF8',
         borderRadius: 500,
