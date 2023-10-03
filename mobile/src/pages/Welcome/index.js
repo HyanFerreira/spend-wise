@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     radial_one: {
         position: 'absolute',
         width: 550,
-        height: 500,
+        height: 550,
         top: -335,
         backgroundColor: 'rgba(0, 252, 248, 0.8)',
         borderRadius: 500,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     },
     view_logo: {
         position: 'absolute',
-        top: 30,
+        top: 20,
         left: 0,
         right: 0,
         alignItems: 'center',
