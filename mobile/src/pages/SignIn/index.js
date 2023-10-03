@@ -15,7 +15,7 @@ export default function SignIn() {
             <View style={styles.content_signin}>
                 <View>
                     <Text style={styles.text_signin}>
-                        Entrar
+                        ENTRAR
                     </Text>
                 </View>
 
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
 
     text_signin: {
         fontSize: 30,
-        fontFamily: 'Helvetica',
+        fontWeight: 'bold',
         marginTop: 10,
         color: '#00FCF8',
     },
