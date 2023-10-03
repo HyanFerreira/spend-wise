@@ -19,7 +19,12 @@ export default function SignUp() {
                     </Text>
                 </View>
                 <View style={styles.content_buttons}>
-                    <TextInput style={styles.button}
+                    <Image
+                        source={require('../../assets/icons/profile.png')}
+                        style={styles.icon}
+                    />  
+                    <TextInput
+                        style={styles.button}
                         placeholder="Nome"
                         placeholderTextColor="white"
                     />
@@ -109,7 +114,7 @@ const styles = StyleSheet.create({
     button: {
         width: 260,
         height: 50,
-        paddingLeft: 30,
+        paddingLeft: 45,
         paddingRight: 30,
         backgroundColor: 'rgba(51, 65, 90, 1)',
         color: '#ffffff',
@@ -128,4 +133,12 @@ const styles = StyleSheet.create({
     button_text_signup: {
         color: '#ffff',
     },
+    icon: {
+        position: 'absolute',
+        zIndex: 99,
+        width: 25,
+        height: 25,
+        top: 10,
+        left: 10,
+    }
 });

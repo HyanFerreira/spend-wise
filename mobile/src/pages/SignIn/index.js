@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigation } from "@react-navigation/native";
-import { View, Image, Text, TouchableOpacity, TextInput, StyleSheet} from 'react-native';
+import { View, Image, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
 
 export default function SignIn() {
     const navigation = useNavigation();
@@ -30,7 +30,7 @@ export default function SignIn() {
                     />
                 </View>
 
-                
+
                 <View>
                     <TouchableOpacity style={styles.button_signin} onPress={() => navigation.navigate("SignIn")}>
                         <Text style={styles.button_text_signin}>Entrar</Text>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
 
     radial_one: {
         position: 'absolute',
-        width: 600,
+        width: 550,
         height: 550,
         top: -335,
         backgroundColor: 'rgba(0, 252, 248, 0.8)',
@@ -61,16 +61,15 @@ const styles = StyleSheet.create({
     },
     radial_two: {
         position: 'absolute',
-        width: 500,
+        width: 450,
         height: 450,
         top: -300,
         backgroundColor: '#00FCF8',
         borderRadius: 500,
     },
-
     view_logo: {
         position: 'absolute',
-        top: 30,
+        top: 20,
         left: 0,
         right: 0,
         alignItems: 'center',
