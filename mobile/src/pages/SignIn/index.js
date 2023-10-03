@@ -12,19 +12,30 @@ export default function SignIn() {
                 <Image style={styles.logo} source={require('./logotipo1.png')} />
             </View>
 
-            <View style={styles.background}>
+            <View style={styles.content_signin}>
+                <View>
+                    <Text style={styles.text_signin}>
+                        Entrar
+                    </Text>
+                </View>
 
-            <View>
-                <TextInput placeholder='Seu email' />
-                <TextInput placeholder='Seu senha' />
-            </View>
+                <View style={styles.content_buttons}>
+                    <TextInput style={styles.button}
+                        placeholder="CPF"
+                        placeholderTextColor="white"
+                    />
+                    <TextInput style={styles.button}
+                        placeholder="Senha"
+                        placeholderTextColor="white"
+                    />
+                </View>
 
-            
-            <View style={styles.view_buttons}>
-                <TouchableOpacity style={styles.button_signin} onPress={() => navigation.navigate("SignIn")}>
-                    <Text style={styles.button_text_signin}>Entrar</Text>
-                </TouchableOpacity>
-            </View>
+                
+                <View>
+                    <TouchableOpacity style={styles.button_signin} onPress={() => navigation.navigate("SignIn")}>
+                        <Text style={styles.button_text_signin}>Entrar</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </View>
     );
@@ -69,33 +80,51 @@ const styles = StyleSheet.create({
         height: 102,
     },
 
-    background: {
-        position: 'absolute',
-        width: 300,
-        height: 300,
-        borderRadius: 25,
-        backgroundColor: 'rgba(34, 42, 63, 1)',
-    },
-
-    view_buttons: {
+    content_signin: {
         position: 'absolute',
         flex: 1,
-        gap: 15,
-        top: 530,
+        alignItems: 'center',
+        width: 300,
+        height: 300,
+        top: 170,
+        borderRadius: 25,
+        backgroundColor: 'rgba(34, 42, 63, 1)',
+        gap: 20,
+    },
+
+    text_signin: {
+        fontSize: 30,
+        fontFamily: 'Helvetica',
+        marginTop: 10,
+        color: '#00FCF8',
+    },
+
+    content_buttons: {
+        flex: 1,
+        gap: 20,
+    },
+    button: {
+        width: 260,
+        height: 50,
+        paddingLeft: 30,
+        paddingRight: 30,
+        paddingBottom: 10,
+        backgroundColor: 'rgba(51, 65, 90, 1)',
+        color: '#ffffff',
+        borderRadius: 15,
     },
 
     button_signin: {
-        paddingHorizontal: 60,
-        paddingVertical: 10,
-        backgroundColor: "#222A3F",
+        width: 260,
+        height: 50,
+        marginBottom: 20,
         borderRadius: 20,
+        backgroundColor: 'rgba(0, 252, 248, 0.8)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-
     button_text_signin: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: "#ffffff",
-        textAlign: "center",
+        color: '#ffff',
     },
-
 });
