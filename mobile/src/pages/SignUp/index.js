@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigation } from "@react-navigation/native";
 import { View, Text, TextInput, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function SignUp() {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <View style={styles.radial_one}></View>
@@ -38,8 +41,8 @@ export default function SignUp() {
                     />
                 </View>
                 <View>
-                    <TouchableOpacity style={styles.button_signup}>
-                        <Text style={styles.button_text_signup}>CADASTRAR</Text>
+                    <TouchableOpacity style={styles.button_signup} onPress={() => navigation.navigate("Home")}>
+                        <Text style={styles.button_text_signup} >CADASTRAR</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -97,6 +100,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         marginTop: 10,
         color: '#00FCF8',
+        fontWeight: 'bold',
     },
     content_buttons: {
         flex: 1,

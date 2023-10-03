@@ -6,6 +6,7 @@ function Routes() {
     const loading = false;
     const signed = false;
     const welcome = false;
+    const home = false;
 
     return welcome ? <view></view> : <AuthRoutes />;
 }
