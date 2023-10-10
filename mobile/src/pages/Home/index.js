@@ -4,7 +4,7 @@ import { View, Text, TextInput, Image, TouchableOpacity, StyleSheet } from 'reac
 export default function SignUp() {
     return (
         <View>
-            <Text>Olá, World</Text>
+            <Text>Olá, Wo</Text>
         </View>
     );
 } 
