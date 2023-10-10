@@ -20,6 +20,11 @@ export default function SignIn() {
                 </View>
 
                 <View style={styles.content_buttons}>
+
+                    <Image
+                        source={require('../../assets/icons/cpf.png')}
+                        style={styles.icon}
+                    />
                     <TextInput style={styles.button}
                         placeholder="CPF"
                         placeholderTextColor="white"
@@ -28,6 +33,17 @@ export default function SignIn() {
                         placeholder="Senha"
                         placeholderTextColor="white"
                     />
+
+                </View>
+
+                <View style={styles.text_dont_have}>
+                    <TouchableOpacity>
+                            <Text style={styles.button_text_dont_have} onPress={() => navigation.navigate("SignUp")}>Não possui uma conta?</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                            <Text style={styles.button_text_forgot}>Esqueceu a senha?</Text>
+                    </TouchableOpacity>
                 </View>
 
 
@@ -84,14 +100,15 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         width: 300,
-        height: 300,
+        height: 350,
         top: 170,
         borderRadius: 25,
         backgroundColor: 'rgba(34, 42, 63, 1)',
-        gap: 20,
+        gap: 10,
     },
 
     text_signin: {
+        fontFamily: 'League Spartan',
         fontSize: 30,
         fontWeight: 'bold',
         marginTop: 10,
@@ -105,7 +122,7 @@ const styles = StyleSheet.create({
     button: {
         width: 260,
         height: 50,
-        paddingLeft: 30,
+        paddingLeft: 45,
         paddingRight: 30,
         paddingBottom: 10,
         backgroundColor: 'rgba(51, 65, 90, 1)',
@@ -116,7 +133,7 @@ const styles = StyleSheet.create({
     button_signin: {
         width: 260,
         height: 50,
-        marginBottom: 20,
+        marginBottom: 10,
         borderRadius: 20,
         backgroundColor: 'rgba(0, 252, 248, 0.8)',
         display: 'flex',
@@ -125,5 +142,37 @@ const styles = StyleSheet.create({
     },
     button_text_signin: {
         color: '#ffff',
+        fontFamily: 'League Spartan',
     },
+    icon: {
+        position: 'absolute',
+        zIndex: 99,
+        width: 35,
+        height: 25,
+        top: 10,
+        left: 10,
+        resizeMode: 'contain'
+    },
+
+    text_dont_have: {
+        color: '#ffffff',
+        flex: 1,
+        gap: -80,
+        top: 40,
+    },
+
+    button_text_forgot: {
+        color: '#ffffff',
+        flex: 1,
+        textAlign: 'center',
+        justifyContent: 'center',
+    },
+
+    button_text_dont_have: {
+        color: '#ffffff',
+        flex: 1,
+        textAlign: 'center',
+        justifyContent: 'center',
+        top: 0,
+    }
 });
