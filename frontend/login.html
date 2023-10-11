@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Login - SpendWise</title>
 </head>
+
 <body>
     <main class="main">
         <div class="logo">
@@ -14,16 +16,33 @@
         <div class="container">
             <div class="content-signin">
                 <div class="content-signin-welcome">
-                    <h1>Já tem uma conta?</h1>
+                    <h1>Bem-vindo(a) de volta!</h1>
+                    <span>Faça login novamente e continue usando SpendWise, o melhor gerenciador financeiro.</span>
                     <button class="btn-signin">Sign In</button>
                 </div>
                 <div class="content-signin-form">
-                    <h1>Sign In</h1>
+                    <div class="signin-h1">
+                        <h1>Sign In</h1>
+                    </div>
+                    <form class="form-signin">
+                        <div class="label-input">
+                            <label>CPF</label>
+                            <input type="text" id="text">
+                        </div>
+                        <div class="label-input">
+                            <label>Senha</label>
+                            <input type="password" id="password">
+                        </div>
+                        <div class="remember-password">Esqueceu a senha? <a href="#">Click Aqui.</a></div>
+                        <button type="submit" class="button-signin">Entrar</button>
+                        <div class="massage-error"></div>
+                    </form>
                 </div>
             </div>
             <div class="content-signup">
                 <div class="content-signup-welcome">
-                    <h1>Não tem uma conta?</h1>
+                    <h1>Olá, amigo(a)!</h1>
+                    <span>Preencha alguns dados e venha fazer parte da família SpendWise.</span>
                     <button class="btn-signup">Sign Up</button>
                 </div>
                 <div class="content-signup-form">
@@ -34,4 +53,5 @@
     </main>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
