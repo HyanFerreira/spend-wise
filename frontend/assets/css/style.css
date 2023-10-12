@@ -38,6 +38,7 @@
   display: flex;
   overflow: hidden;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .content-signin,
@@ -50,36 +51,27 @@
   position: relative;
 }
 
-.content-signin-form,
-.content-signup-form {
-  width: 100%;
-  height: 100%;
-  transition: all 900ms;
-}
-
 .content-signin-form *,
 .content-signup-form * {
   color: #ffffff;
 }
 
-.content-signin-form {
+.content-signin-form,
+.content-signup-form {
+  width: 100%;
+  height: 100%;
+  transition: all 900ms;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 30px 10px 50px 10px;
 }
 
-.signin-h1 {
+.form-signin,
+.form-signup {
   width: 100%;
-  height: 15%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.form-signin {
-  width: 100%;
-  height: 70%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,7 +113,7 @@
 }
 
 .button-signin:hover {
-  background-color: rgb(0, 252, 248, .7);
+  background-color: rgb(0, 252, 248, 0.7);
 }
 
 .remember-password {
@@ -133,6 +125,10 @@
   opacity: 0;
 }
 
+.content-signup-form {
+
+}
+
 .content-signin-welcome,
 .content-signup-welcome {
   width: 100%;
@@ -142,7 +138,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   padding: 20px;
   text-align: center;
 }
