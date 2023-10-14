@@ -25,11 +25,14 @@
                     <form class="form-signin">
                         <div class="label-input">
                             <label>CPF</label>
-                            <input type="text" id="text">
+                            <input type="text" id="text-cpf-signin">
                         </div>
                         <div class="label-input">
                             <label>Senha</label>
-                            <input type="password" id="password">
+                            <div class="area-password">
+                                <input type="password" id="password-signin">
+                                <img class="password-lock" src="./assets/img/password-lock.svg" alt="">
+                            </div>
                         </div>
                         <div class="remember-password">Esqueceu a senha? <a href="#">Click Aqui.</a></div>
                         <button type="submit" class="button-signin">Entrar</button>
@@ -48,21 +51,24 @@
                     <form class="form-signup">
                         <div class="label-input">
                             <label>Nome</label>
-                            <input type="text" id="text">
+                            <input type="text" id="text-name-signup">
                         </div>
                         <div class="label-input">
                             <label>Sobrenome</label>
-                            <input type="text" id="text">
+                            <input type="text" id="text-surname-signup">
                         </div>
                         <div class="label-input">
                             <label>CPF</label>
-                            <input type="text" id="text">
+                            <input type="text" id="text-cpf-sigup">
                         </div>
                         <div class="label-input">
                             <label>Senha</label>
-                            <input type="password" id="password">
+                            <div class="area-password">
+                                <input type="password" id="password-signup">
+                                <img class="password-lock-signup" src="./assets/img/password-lock.svg" alt="">
+                            </div>
                         </div>
-                        <button type="submit" class="button-signin">Cadastrar</button>
+                        <button type="submit" class="button-signup">Cadastrar</button>
                         <div class="massage-error"></div>
                     </form>
                 </div>

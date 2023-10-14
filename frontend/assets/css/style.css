@@ -88,18 +88,36 @@
 .label-input label {
   font-size: 1rem;
   font-weight: 500;
+  margin-bottom: 8px;
 }
 
 .label-input input {
-  padding: 10px;
+  padding: 10px 30px 10px 10px;
   border-radius: 5px;
   border: none;
-  margin-top: 8px;
   outline: none;
   color: black;
 }
 
-.button-signin {
+.area-password{
+  position: relative;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.area-password img {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.button-signin,
+.button-signup {
   padding: 10px 50px;
   border: 0;
   background-color: #00fcf8;
@@ -112,7 +130,8 @@
   margin: 10px 0;
 }
 
-.button-signin:hover {
+.button-signin:hover,
+.button-signup:hover {
   background-color: rgb(0, 252, 248, 0.7);
 }
 
