@@ -24,6 +24,38 @@
   justify-content: center;
 }
 
+.loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(27, 33, 51, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 6px solid #33415a;
+  border-top: 6px solid #00fcf8;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .logo {
   position: absolute;
   top: 30px;
@@ -39,6 +71,7 @@
   overflow: hidden;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
 }
 
 .content-signin,
@@ -99,7 +132,7 @@
   color: black;
 }
 
-.area-password{
+.area-password {
   position: relative;
   width: 300px;
   display: flex;
@@ -132,11 +165,20 @@
 
 .button-signin:hover,
 .button-signup:hover {
-  background-color: rgb(0, 252, 248, 0.7);
+  background-color: rgb(0, 252, 248, 0.5);
 }
 
 .remember-password {
   margin: 10px 0;
+}
+
+.remember-password a {
+  color: #00fcf8;
+  transition: ease-in-out .3s;
+}
+
+.remember-password a:hover {
+  color: rgba(0, 252, 248, 0.5);
 }
 
 .content-signup-form {
