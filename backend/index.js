@@ -2,6 +2,10 @@ const express = require('express');
 const res = require('express/lib/response');
 const app = express();
 const PORT = 377;
+const cors = require('cors');
+
+// Habilitar o uso do middleware de CORS
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -53,26 +57,26 @@ app.get('/usuario/buscarnome/:nome', async (req, res) => {
 });
 
 // retorna o usuário pelo email
-app.get('/usuario/buscaremail/:email', async (req, res) => {
-    const { email } = req.params;
-    const [query] = await conection.execute('select * from usuario where email like ?', ['%' + email + '%']);
-    if (query.length === 0) return res.status(400).json({ mensagem: 'Nenhum usuário encontrado por este email!' });
+app.get('/usuario/buscarcpf/:cpf', async (req, res) => {
+    const { cpf } = req.params;
+    const [query] = await conection.execute('select * from usuario where cpf like ?', ['%' + cpf + '%']);
+    if (query.length === 0) return res.status(400).json({ mensagem: 'Nenhum usuário encontrado por este CPF!' });
     return res.status(200).json(query)
 });
 
 // insere um novo usuário no database
 app.post('/usuario', async (req, res) => {
-    const { nome, sobrenome, email, senha, cpf } = req.body;
-    const [query] = await conection.execute('insert into usuario (nome, sobrenome, email, senha, cpf) values (?, ?, ?, ?, ?)', [nome, sobrenome, email, senha, cpf]);
+    const { nome, sobrenome, senha, cpf } = req.body;
+    const [query] = await conection.execute('insert into usuario (nome, sobrenome, senha, cpf) values (?, ?, ?, ?)', [nome, sobrenome, senha, cpf]);
     return res.json(query);
 });
 
 // atualiza os dados do usuário no database
 app.put('/usuario/:id', async (req, res) => {
     const { id } = req.params;
-    const { nome, sobrenome, email, senha, cpf } = req.body;
+    const { nome, sobrenome, senha, cpf } = req.body;
     const [query] = await conection
-        .execute('update usuario set nome = ?, sobrenome = ?, email = ?, senha = ?, cpf = ? where id = ?', [nome, sobrenome, email, senha, cpf, id]);
+        .execute('update usuario set nome = ?, sobrenome = ?, senha = ?, cpf = ? where id = ?', [nome, sobrenome, senha, cpf, id]);
     return res.json(query);
 });
 
@@ -82,6 +86,12 @@ app.delete('/usuario/:id', async (req, res) => {
     const [query] = await conection.execute('delete from usuario where id = ?', [id])
     return res.json(query)
 });
+
+
+
+
+
+
 
 
 

@@ -21,7 +21,6 @@ CREATE TABLE IF NOT EXISTS `spendwise`.`usuario` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NOT NULL,
   `sobrenome` VARCHAR(200) NOT NULL,
-  `email` VARCHAR(150) NULL,
   `senha` VARCHAR(45) NOT NULL,
   `cpf` VARCHAR(11) NOT NULL,
   PRIMARY KEY (`id`, `cpf`))
