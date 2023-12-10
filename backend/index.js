@@ -32,13 +32,28 @@ const getAllPessoas = async () => {
 
 // retorna a lista de usuários
 app.get('/usuario', async (req, res) => {
-    const resultado = await getAllPessoas()
-
-    if (resultado.length === 0) {
-        return res.status(200).json({ mensagem: "Nenhum usuário encontrado no database!" });
+    try {
+      const usuarios = await getAllPessoas();
+  
+      if (usuarios.length > 0) {
+        let html = '<h1>Lista de Usuários</h1>';
+        html += '<table border="1">';
+        html += '<tr><th>ID</th><th>Nome</th><th>Sobrenome</th><th>CPF</th></tr>';
+  
+        usuarios.forEach(usuario => {
+          html += `<tr><td>${usuario.id}</td><td>${usuario.nome}</td><td>${usuario.sobrenome}</td><td>${usuario.cpf}</td></tr>`;
+        });
+  
+        html += '</table>';
+        res.send(html);
+      } else {
+        res.send('<p>Nenhum usuário encontrado.</p>');
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Erro ao buscar usuários');
     }
-    return res.status(200).json(resultado);
-});
+  });
 
 // retorna o usuário pelo seu id
 app.get('/usuario/:id', async (req, res) => {
@@ -324,3 +339,17 @@ app.delete('/despesas/:id', async (req, res) => {
     const [query] = await conection.execute('DELETE FROM despesas WHERE id = ?', [id]);
     return res.json(query);
 });
+
+// gera tabela com os usuarios
+function generateUserTable(users) {
+  let tableHtml = '<table border="1">';
+  tableHtml += '<tr><th>Nome</th><th>Sobrenome</th><th>CPF</th></tr>';
+
+  for (const user of users) {
+    tableHtml += `<tr><td>${user.nome}</td><td>${user.sobrenome}</td><td>${user.cpf}</td></tr>`;
+  }
+
+  tableHtml += '</table>';
+
+  return tableHtml;
+}
